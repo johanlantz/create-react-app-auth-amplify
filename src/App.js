@@ -4,7 +4,17 @@ import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
+
+import { API, graphqlOperation } from 'aws-amplify';
+import * as queries from './graphql/queries';
+
+
 Amplify.configure(aws_exports);
+
+
+// Simple query
+//const allTodos = await API.graphql({ query: queries.listTodos });
+//console.log(allTodos); // result: { "data": { "listTodos": { "items": [/* ..... */] } } }
 
 class App extends Component {
   render() {
